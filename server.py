@@ -1106,7 +1106,7 @@ async def ocr_team(botev: BotEvent):
         await botev.finish("未识别到任何队伍！")
 
     msg = f"{prefix}一键编队 1 1\n" + "\n".join(
-            f"队伍{id} {' '.join(db.get_unit_name(uid * 100 + 1) for uid in team)}{' END' if len(team) < 5 else ''}"
+            f"队伍{id} {' '.join(db.get_unit_name(uid * 100 + 1) for uid in team)}"
             for id, team in enumerate(result)
     )
     await botev.finish(msg)
